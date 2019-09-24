@@ -32,7 +32,7 @@ img{
 	background-color: black;
 	min-height: 300px;
 	
-	background-image: url("../img/octanparts/bckgr.jpg");
+	background-image: url("../img/car_bckg6_full.jpg");
 	background-repeat: no-repeat;
 	background-size: 500px;
 	background-position: center bottom;
@@ -43,7 +43,7 @@ img{
 	.page-header{	
 		min-height: 500px;
 		
-		background-image: url("../img/octanparts/bckgr.jpg");
+		background-image: url("../img/car_bckg6_full.jpg");
 		background-position: center bottom;
 		background-size: cover;
 		background-size: 800px;
@@ -262,7 +262,7 @@ background-image:url(../img/icon-close.svg)}
 @media (min-width:768px){
 	.advantages .advantages-list .advantages-list-item{
 		flex-grow: 1;
-		flex-basis: 250px;	
+		flex-basis: 250px;		
 	}
 	.advantages .advantages-list .advantages-list-item:nth-child(odd){
 		margin-right: 20px;	
@@ -277,6 +277,7 @@ background-image:url(../img/icon-close.svg)}
 	.advantages .advantages-list .advantages-list-item{
 		flex-grow: 1;
 		flex-basis: 450px;
+		padding-left: 150px;
 	}
 }
 .advantages .advantages-list .advantages-list-item::before{
@@ -288,10 +289,22 @@ background-image:url(../img/icon-close.svg)}
 	height: 100%;	
 
 	background-repeat: no-repeat;
-	background-size: 80px;
+	background-size: 90px;
 	background-position: center;
 	
 	content: "";	
+}
+@media (min-width:768px){
+	.advantages .advantages-list .advantages-list-item::before{
+		width: 120px;
+		background-size: 90px;
+	}
+}
+@media (min-width:1300px){
+	.advantages .advantages-list .advantages-list-item::before{
+		width: 150px;
+		background-size: 100px;
+	}
 }
 .advantages .advantages-list .advantages-list-item.advantage-assortment::before{
 	background-image: url("../img/octanparts/assortment.svg");
@@ -307,6 +320,18 @@ background-image:url(../img/icon-close.svg)}
 }
 .advantages .advantages-list .advantages-list-item-header{
 	text-align: center;
+	font-size: 23px;
+    line-height: normal;
+}
+@media (min-width:768px){
+	.advantages .advantages-list .advantages-list-item-header{
+		font-size: 20px;
+	}
+}
+@media (min-width:1300px){
+	.advantages .advantages-list .advantages-list-item-header{
+		font-size: 30px;
+	}
 }
 
 
@@ -319,6 +344,12 @@ background-image:url(../img/icon-close.svg)}
 		
 	/*outline: 1px solid green;*/
 }
+.about-us .about-us-header{
+	font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+}
 @media (min-width:768px){
 	.about-us .about-us-wrapper{
 		width: 640px;	
@@ -330,52 +361,86 @@ background-image:url(../img/icon-close.svg)}
 		width: 960px;		
 	}
 }
+
 .about-us .parts-list{	
 	margin: 0;
 	padding: 0;
 	list-style: none;	
-}
-.about-us .parts-list .parts-list-item.item-battery,
-.about-us .parts-list .parts-list-item.item-spanner,
-.about-us .parts-list .parts-list-item.item-spray,
-.about-us .parts-list .parts-list-item.item-service{
-	background: black;
-	color: white;
-}
-.about-us .parts-list .parts-list-item.item-engine,
-.about-us .parts-list .parts-list-item.item-belt,
-.about-us .parts-list .parts-list-item.item-fender,
-.about-us .parts-list .parts-list-item.item-wheel{
-	background: white;
-	color: black;
 }
 @media (min-width:768px){
 	.about-us .parts-list{
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;	
-	}
+	}	
 }
+
 .about-us .parts-list .parts-list-item{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	min-height: 150px;	
+	padding: 2px;
+    padding-bottom: 10px;
+	min-height: 150px;		
+	border: 2px solid white;
+	
+	background: white;
+	color: black;
+	fill: black;
 		
 	/*outline: 1px solid blue;*/
+}
+.about-us .parts-list .parts-list-item:nth-child(even){		
+	background-color: black;	
+	color: white;
+}
+.about-us .parts-list .parts-list-item:nth-child(even) .part-list-icon{
+	fill: white;	
 }
 @media (min-width:768px){
 	.about-us .parts-list .parts-list-item{
 		flex-basis: 200px;
-		flex-grow: 0;		
-		margin-bottom: 10px;
+		margin-bottom: 10px;		
+	}	
+	.about-us .parts-list .parts-list-item:nth-last-child(2),
+	.about-us .parts-list .parts-list-item:nth-last-child(1){
+		flex-grow: 1;
 	}
+	.about-us .parts-list .parts-list-item:nth-last-child(2){
+		margin-right: 10px;
+	}
+	.about-us .parts-list .parts-list-item:nth-last-child(1){
+		margin-left: 10px;
+	}
+	
 }
 @media (min-width:1300px){
 	.about-us .parts-list .parts-list-item{
 		flex-basis: 400px;
-		flex-grow: 0;		
+		flex-grow: 0;	
+		background: black;
+		color: white;		
+	}
+	.about-us .parts-list .parts-list-item .part-list-icon{
+		fill: white;
+	}
+	.about-us .parts-list .parts-list-item:nth-last-child(2),
+	.about-us .parts-list .parts-list-item:nth-last-child(1){
+		flex-grow: 0;
+	}
+	.about-us .parts-list .parts-list-item:nth-child(odd){
+		margin-right: 20px;	
+		background-color: black;	
+	}
+	.about-us .parts-list .parts-list-item:nth-child(4n+1),
+	.about-us .parts-list .parts-list-item:nth-child(4n){
+		color: black;
+		background-color: white;	
+	}
+	.about-us .parts-list .parts-list-item:nth-child(4n+1) .part-list-icon,
+	.about-us .parts-list .parts-list-item:nth-child(4n) .part-list-icon{
+		fill: black;	
 	}
 }
 .about-us .parts-list .part-list-item-header{
@@ -389,8 +454,8 @@ background-image:url(../img/icon-close.svg)}
 }
 
 .order{
-	background-color: white;
-    
+	padding-bottom: 5px;
+	background-color: white;    
 	color: black;
 	
 	/*outline: 1px solid pink;*/
@@ -470,9 +535,8 @@ background-image:url(../img/icon-close.svg)}
 
 	/*outline: 1px solid pink;*/
 }
-.contacts .contacts-wrapper{	
-	width: 320px;
-	margin: 0 auto;	
+.contacts .contacts-wrapper{		
+	margin: 0 5px;	
 	
 	/*outline: 1px solid green;*/
 }
