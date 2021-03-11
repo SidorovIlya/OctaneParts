@@ -1,11 +1,27 @@
-var menuBtn = document.querySelector(".page-header-menu-btn");
-var mobileMenu = document.querySelector(".page-header-menu");
+$(function(){
 
-mobileMenu.classList.add("page-header-menu--hide");
-menuBtn.classList.remove("page-header__menu-btn--nojs");
+	var $modal = $('<div class="modal">' +
+		'<div class="modal__content">' +
+			'<img class="modal__img" src="">' +
+		'</div>' + 
+		'<button class="modal__close">Close</button>' +
+	'</div>');
+	var $modalImg = $modal.find('.modal__img');
+	
+	$modal.find('.modal__close').on('click', function(){
+		$modal.detach();
+		$('body').removeClass('uscrollable')
+	});
 
-menuBtn.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  menuBtn.classList.toggle("page-header-menu-btn--close");
-  mobileMenu.classList.toggle("page-header-menu--hide");
+	$('.projects__galery-elem').on('click', function(){
+		var $img = $(this).children('.projects__galery-img');
+		if (!$img.length) {
+			return;
+		}
+		$modalImg.attr('src', $img.attr('src'));
+
+		$('body')
+			.addClass('uscrollable')
+			.append($modal);
+	});
 });
